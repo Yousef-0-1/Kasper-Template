@@ -109,6 +109,14 @@ button {
   font-size: 16px;
   line-height: 1.7;
 }
+@media (max-width: 400px) {
+  .special-heading h2 {
+    font-size: 25px;
+  }
+  .special-heading h2::before {
+    width: 150px;
+  }
+}
 .top {
   display: none;
   position: fixed;
@@ -121,11 +129,7 @@ button {
   cursor: pointer;
   border-radius: 1px;
 }
-@media (max-width: 991px) {
-  .top {
-    display: none !important;
-  }
-}
+
 /* End Components */
 
 /* Start Header */
@@ -235,8 +239,8 @@ header nav form i {
   background-image: url("../images/landing.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
   background-attachment: fixed;
+  position: relative;
 }
 
 .landing .overlay {
@@ -356,8 +360,9 @@ header nav form i {
 .services .service-container .srv-box i {
   color: #002a36;
 }
+
 .services .service-container .srv-box .text {
-  width: 350px;
+  max-width: 350px;
 }
 
 .services .service-container .srv-box .text h3 {
@@ -384,6 +389,19 @@ header nav form i {
     margin-bottom: 20px;
   }
 }
+@media (max-width: 400px) {
+  .services .service-container {
+    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+    justify-items: center;
+  }
+}
+@media (max-width: 321px) {
+  .services .service-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    justify-items: center;
+  }
+}
+
 /* Second Half */
 .services-sec {
   background-color: var(--section-color);
@@ -393,12 +411,25 @@ header nav form i {
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
+  background-image: url("../images/pexels-ivaoo-691710.jpg");
+  background-size: cover;
+  background-position: 0;
 }
-
+.services-sec::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 70%);
+  z-index: 1;
+}
 .services-sec img {
   position: absolute;
   bottom: 0;
   left: 18%;
+  z-index: 2;
 }
 @media (max-width: 991px) {
   .services-sec img {
@@ -411,6 +442,7 @@ header nav form i {
   width: 50%;
   display: flex;
   justify-content: flex-start;
+  z-index: 2;
 }
 
 .services-sec .text .content {
@@ -464,7 +496,7 @@ header nav form i {
 }
 @media (max-width: 767px) {
   .portfolio .container ul li {
-    padding: 15px 10px;
+    padding: 15px 5px;
     flex: 1;
     margin-bottom: 5px;
   }
@@ -484,13 +516,15 @@ header nav form i {
   margin-bottom: 20px;
 }
 .portfolio .port-boxes .box {
-  width: 25%;
-  min-height: 10%;
-  height: 300px;
+  flex-basis: 25%;
   background-color: #f5f3f3;
   transition: var(--tarnsition-duration);
   position: relative;
   overflow: hidden;
+}
+.portfolio .port-boxes .box img {
+  width: 100%;
+  height: 300px;
 }
 .portfolio .port-boxes .box:hover {
   background-color: #eee;
@@ -535,6 +569,11 @@ header nav form i {
   color: var(--main-color);
   font-size: small;
 }
+@media (max-width: 992px) {
+  .portfolio .port-boxes .box {
+    flex-basis: 100%;
+  }
+}
 .portfolio .flex-for-button {
   display: flex;
   justify-content: center;
@@ -576,6 +615,22 @@ header nav form i {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
   background-color: var(--section-color);
+  position: relative;
+  background-image: url("../images/pexels-steve-1509534.jpg");
+  background-size: cover;
+  background-position: center;
+
+  z-index: 0;
+}
+.porfolio-second::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 70%);
+  z-index: 0;
 }
 .porfolio-second .text-box {
   padding: 25px;
@@ -588,6 +643,8 @@ header nav form i {
   min-height: 250px;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 2;
+  position: relative;
 }
 .porfolio-second .text-box h2 {
   text-transform: uppercase;
@@ -627,6 +684,22 @@ header nav form i {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
   background-color: var(--section-color);
+  background-image: url("../images/pexels-francesco-ungaro-96381.jpg");
+  background-position: 0;
+
+  background-size: cover;
+  position: relative;
+}
+
+.about-second::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 70%);
+  z-index: 1;
 }
 .about-second .container {
   background-color: var(--transparent-color);
@@ -634,6 +707,8 @@ header nav form i {
   justify-content: space-around;
   color: white;
   min-height: 200px;
+  z-index: 2;
+  position: relative;
 }
 .about-second .container .about-box {
   display: flex;
@@ -747,10 +822,9 @@ header nav form i {
   padding: 20px;
   line-height: 1.9;
 }
-.about-us .info .container .info-cont .img {
+.about-us .info .container .info-cont img {
   width: 100px;
   height: 100px;
-  background: var(--section-color);
   border-radius: 50%;
 }
 .about-us .bullets {
@@ -848,6 +922,23 @@ header nav form i {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-image: url("../images/pexels-gdtography-277628-911758.jpg");
+  background-size: cover;
+  background-position: 0;
+  position: relative;
+}
+
+.about-us .info .qoute::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 70%);
+}
+.about-us .info .qoute .container {
+  z-index: 1;
 }
 .about-us .info .qoute h2 {
   text-transform: uppercase;
@@ -1008,6 +1099,21 @@ header nav form i {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
   background-color: var(--section-color);
+  background-image: url("../images/pexels-axel-vandenhirtz-332204-929280.jpg");
+  background-position: 0;
+  background-size: cover;
+  position: relative;
+}
+
+.pricing .req::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 70%);
+  z-index: 1;
 }
 .pricing .req .container {
   padding-top: var(--section-padding);
@@ -1015,6 +1121,8 @@ header nav form i {
   display: flex;
   justify-content: space-between;
   gap: 25px;
+  z-index: 1;
+  position: relative;
 }
 @media (max-width: 767px) {
   .pricing .req .container {
@@ -1046,6 +1154,7 @@ header nav form i {
 }
 .pricing .req p {
   width: calc(100% - (100% / 5));
+  color: white;
 }
 /* End Pricing */
 
