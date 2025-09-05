@@ -525,6 +525,8 @@ header nav form i {
 .portfolio .port-boxes .box img {
   width: 100%;
   height: 300px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 .portfolio .port-boxes .box:hover {
   background-color: #eee;
