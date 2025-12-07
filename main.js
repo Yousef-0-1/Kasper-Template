@@ -20,7 +20,7 @@ function changeColorHandler() {
         `--transparent-color`,
         `#fa191966`
       );
-      backgroundImgLanding.style.cssText = `background-image:url(../images/skull.webp)`;
+      backgroundImgLanding.style.cssText = `background-image:url(images/skull.webp)`;
       break;
     case 1:
       document.documentElement.style.setProperty(`--main-color`, `#19c8fa`);
@@ -29,7 +29,7 @@ function changeColorHandler() {
         `--transparent-color`,
         `#19c8fa66`
       );
-      backgroundImgLanding.style.cssText = `background-image:url(../images/landing.webP)`;
+      backgroundImgLanding.style.cssText = `background-image:url(images/landing.webP)`;
       break;
     case 2:
       document.documentElement.style.setProperty(`--main-color`, `#6dfa19`);
@@ -38,7 +38,7 @@ function changeColorHandler() {
         `--transparent-color`,
         `#6dfa1966`
       );
-      backgroundImgLanding.style.cssText = `background-image:url(../images/pic-for-box.png)`;
+      backgroundImgLanding.style.cssText = `background-image:url(images/pic-for-box.png)`;
       break;
   }
   bullets.forEach((e) => {
