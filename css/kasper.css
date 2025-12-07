@@ -2,7 +2,8 @@
 :root {
   --main-color: #19c8fa;
   --section-color: #1f2021;
-  --transparent-color: rgb(25, 201, 250, 40%);
+  --transparent-color: rgba(25, 201, 250, 0.4);
+  --button-hover: #1bb9e4;
   --tarnsition-duration: 0.3s;
   --p-color: #777;
   --section-padding: 70px;
@@ -236,11 +237,12 @@ header nav form i {
 .landing {
   min-height: 100vh;
   background-color: #1f2021;
-  background-image: url("../images/landing.jpg");
+  background-image: url("../images/landing.webP");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   position: relative;
+  transition: var(--tarnsition-duration);
+  /* background-attachment: fixed; */
 }
 
 .landing .overlay {
@@ -411,7 +413,7 @@ header nav form i {
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
-  background-image: url("../images/pexels-ivaoo-691710.jpg");
+  background-image: url("../images/octagons.webp");
   background-size: cover;
   background-position: 0;
 }
@@ -486,7 +488,7 @@ header nav form i {
 .portfolio .container ul {
   display: flex;
   justify-content: center;
-  gap: 1px;
+  /* gap: 1px; */
 }
 .portfolio .container ul li {
   text-transform: uppercase;
@@ -521,6 +523,7 @@ header nav form i {
   transition: var(--tarnsition-duration);
   position: relative;
   overflow: hidden;
+  line-height: 0;
 }
 .portfolio .port-boxes .box img {
   width: 100%;
@@ -528,9 +531,9 @@ header nav form i {
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
-.portfolio .port-boxes .box:hover {
+/* .portfolio .port-boxes .box:hover {
   background-color: #eee;
-}
+} */
 .portfolio .port-boxes .box div {
   position: absolute;
   bottom: -100%;
@@ -547,17 +550,23 @@ header nav form i {
   transform: translate(-50%, -60%);
   background-color: var(--main-color);
   color: white;
-  padding: 25px;
+  font-weight: 100;
   border-radius: 50%;
   font-size: 45px;
   cursor: pointer;
   transition: var(--tarnsition-duration);
+  display: flex;
+  width: 65px;
+  height: 65px;
+  justify-content: center;
+  align-items: center;
 }
 .portfolio .port-boxes .box:hover::before {
   top: 50%;
 }
 .portfolio .port-boxes .box:hover div {
   bottom: 0;
+  line-height: normal;
 }
 
 .portfolio .port-boxes .box div h4 {
@@ -590,9 +599,9 @@ header nav form i {
   margin-bottom: 25px;
 }
 .portfolio .container button:hover {
-  background-color: #1bb9e4;
+  background-color: var(--button-hover);
   border-radius: 2px;
-  box-shadow: inset 0px 0px 12px 1px #1bb9e4;
+  box-shadow: inset 0px 0px 12px 1px var(--button-hover);
 }
 @media (max-width: 992px) {
   .portfolio .port-boxes .box {
@@ -618,7 +627,7 @@ header nav form i {
   padding-bottom: var(--section-padding);
   background-color: var(--section-color);
   position: relative;
-  background-image: url("../images/pexels-steve-1509534.jpg");
+  background-image: url("../images/blue.webp");
   background-size: cover;
   background-position: center;
 
@@ -686,7 +695,7 @@ header nav form i {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
   background-color: var(--section-color);
-  background-image: url("../images/pexels-francesco-ungaro-96381.jpg");
+  background-image: url("../images/lights.webp");
   background-position: 0;
 
   background-size: cover;
@@ -924,7 +933,7 @@ header nav form i {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url("../images/pexels-gdtography-277628-911758.jpg");
+  background-image: url("../images/stairs.webP");
   background-size: cover;
   background-position: 0;
   position: relative;
@@ -1092,16 +1101,16 @@ header nav form i {
   margin-bottom: 50px;
 }
 .pricing .contact button:hover {
-  background-color: #1bb9e4;
+  background-color: var(--button-hover);
   border-radius: 2px;
-  box-shadow: inset 0px 0px 12px 1px #1bb9e4;
+  box-shadow: inset 0px 0px 12px 1px var(--button-hover);
 }
 
 .pricing .req {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
   background-color: var(--section-color);
-  background-image: url("../images/pexels-axel-vandenhirtz-332204-929280.jpg");
+  background-image: url("../images/white.webp");
   background-position: 0;
   background-size: cover;
   position: relative;
@@ -1197,9 +1206,9 @@ header nav form i {
   margin-top: 20px;
 }
 .contact-us button:hover {
-  background-color: #1bb9e4;
+  background-color: var(--button-hover);
   border-radius: 2px;
-  box-shadow: inset 0px 0px 12px 1px #1bb9e4;
+  box-shadow: inset 0px 0px 12px 1px var(--button-hover);
 }
 
 .contact-us .nums-loca .nums {
