@@ -54,3 +54,9 @@ changeColorLeft.addEventListener(`click`, () => {
   i -= 1;
   changeColorHandler();
 });
+bullets.forEach((e) => {
+  e.onclick = () => {
+    i = e.dataset.num;
+    changeColorHandler();
+  };
+});
